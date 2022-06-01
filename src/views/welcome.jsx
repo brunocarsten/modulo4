@@ -28,14 +28,14 @@ export const Welcome = () => {
           <>
             <div className="info">
               <h1 className="title">BOAS-VINDAS!</h1>
+              <p>Seja bem-vindo ao Quizz do Módulo 4 do Curso Comunidade e Povos Tradicionais!</p>
               <p>
-                Seja bem-vindo ao Quizz do Módulo 4 do Curso Comunidade e Povos Tradicionais!
+                Sua tarefa agora será ajudar as crianças de comunidades e povos tradicionais a desbloquearem brinquedos
+                e brincadeiras para se divertirem juntas.
               </p>
               <p>
-                Sua tarefa agora será ajudar as crianças de comunidades e povos tradicionais a desbloquearem brinquedos e brincadeiras para se divertirem juntas.
-              </p>
-              <p>
-                Para isso, responda corretamente às próximas perguntas sobre cenas do cotidiano dentro de povos e comunidades tradicionais. Boa sorte!
+                Para isso, responda corretamente às próximas perguntas sobre cenas do cotidiano dentro de povos e
+                comunidades tradicionais. Boa sorte!
               </p>
             </div>
             <Button
@@ -49,32 +49,44 @@ export const Welcome = () => {
         return (
           <>
             <div className="info">
+              <h1 className="title">REGRAS DO JOGO</h1>
               <ul>
                 <li>
                   <img src={image1} alt="1" />
                   <p>
-                    Certifique-se de que você estudou todos os conteúdos disponíveis no Módulo 4, assim você conseguirá ter melhor desempenho no jogo.
+                    Certifique-se de que você estudou todos os conteúdos disponíveis no Módulo 4, assim você conseguirá
+                    ter melhor desempenho no jogo.
                   </p>
                 </li>
 
                 <li>
                   <img src={image2} alt="2" />
-                  <p>Clique nos brinquedos e nas brincadeiras que estão numerados para conhecer as perguntas sobre as cenas do cotidiano dentro de povos e comunidades tradicionais.</p>
+                  <p>
+                    Clique nos brinquedos e nas brincadeiras que estão numerados para conhecer as perguntas sobre as
+                    cenas do cotidiano dentro de povos e comunidades tradicionais.
+                  </p>
                 </li>
 
                 <li>
                   <img src={image3} alt="3" />
-                  <p>Ao longo do desafio, você precisará escolher a alternativa correta entre as demais apresentadas.</p>
+                  <p>
+                    Ao longo do desafio, você precisará escolher a alternativa correta entre as demais apresentadas.
+                  </p>
                 </li>
 
                 <li>
                   <img src={image4} alt="4" />
-                  <p>Para desbloquear cada brinquedo ou brincadeira e se divertir com a criançada, será necessário acertar a questão. Em caso de resposta incorreta, você poderá tentar novamente. </p>
+                  <p>
+                    Para desbloquear cada brinquedo ou brincadeira e se divertir com a criançada, será necessário
+                    acertar a questão. Em caso de resposta incorreta, você poderá tentar novamente.{' '}
+                  </p>
                 </li>
 
                 <li>
                   <img src={image5} alt="5" />
-                  <p>Se acertar todas as questões, você vencerá o jogo, e as crianças poderão escolher a diversão do dia. </p>
+                  <p>
+                    Se acertar todas as questões, você vencerá o jogo, e as crianças poderão escolher a diversão do dia.{' '}
+                  </p>
                 </li>
 
                 <li>
