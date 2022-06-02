@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react'
 import { Container } from '../components/layout/Container'
 import { Header } from '../components/layout/Header'
-import { NavButton } from '../components/layout/NavButton'
+import { Button } from '../components/layout/Button'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import imgdir from '../assets/popup amarelo dir.png'
 import imgesq from '../assets/popup amarelo esq.png'
@@ -53,42 +55,51 @@ const style = {
 }
 
 export const PopupAcerto = () => {
-  let link = '/brincadeiras'
+  const [link, setLink] = useState('/brincadeiras')
+  const navigate = useNavigate()
+  const location = useLocation()
+
   function handleAnswer() {
     const itemsDone = JSON.parse(localStorage.getItem('progress'))
     if (itemsDone) {
-      if (itemsDone.length >= 7) {
-        link = '/contagem'
+      if (itemsDone.length < 7) {
+        setLink('/contagem')
       }
     }
   }
-  return(
-  <>
-    <Header></Header>
-    <Container>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'calc(100vh - 83px)' }}>
-        <div className="popup" style={style.main}>
-          <div className="bkgesq" style={style.bkg}>
-            <img src={imgesq} alt="" />
-          </div>
-          <div className="content" style={style.content}>
-            <h1 style={style.title}>Parabéns! Você acertou!</h1>
-            <p style={style.text}>Povos e comunidades tradicionais são muito comunitários, e a maioria de suas atividades são coletivas!</p>
-            <NavButton
-              onLoad = {handleAnswer()}
-              label="AVANÇAR"
-              url={link}
-              style={{ width: 264, marginTop: 20, background: '#00773E', color: '#FFF', maxWidth: '100%' }}
-            >
-              AVANÇAR
-            </NavButton>
-          </div>
-          <div className="bkgdir" style={style.bkg}>
-            <img src={imgdir} alt="" />
+
+  useEffect(() => {
+    handleAnswer()
+  }, [])
+
+  return (
+    <>
+      <Header></Header>
+      <Container>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'calc(100vh - 83px)' }}>
+          <div className="popup" style={style.main}>
+            <div className="bkgesq" style={style.bkg}>
+              <img src={imgesq} alt="" />
+            </div>
+            <div className="content" style={style.content}>
+              <h1 style={style.title}>Parabéns! Você acertou!</h1>
+              {location.state && <p style={style.text}>{location.state.message}</p>}
+
+              <Button
+                onClick={() => {
+                  navigate(link)
+                }}
+                label="AVANÇAR"
+                url={link}
+                style={{ width: 264, marginTop: 20, background: '#00773E', color: '#FFF', maxWidth: '100%' }}
+              />
+            </div>
+            <div className="bkgdir" style={style.bkg}>
+              <img src={imgdir} alt="" />
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
-  </>
+      </Container>
+    </>
   )
 }

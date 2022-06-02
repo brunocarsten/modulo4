@@ -12,7 +12,7 @@ export const Question = ({ ...props }) => {
   const { handleCurrentStep } = useContext(ProgressContext)
   const navigate = useNavigate()
   const { bkg, src, item } = props
-  const { alternatives, question, title, index } = item
+  const { alternatives, question, index, message } = item
 
   const [selected, setSelected] = useState(0)
 
@@ -26,24 +26,24 @@ export const Question = ({ ...props }) => {
     if (correct) {
       questions[index].done = true
       await handleCurrentStep()
-      navigate('/acerto')
+      navigate('/acerto', { state: { message } })
     } else {
       navigate('/erro')
     }
   }
 
-  let style = {};
-  if (index == 2 || index == 5 || index == 6) {
+  let style = {}
+  if (index === 2 || index === 5 || index === 6) {
     style = {
       box: {
         flexWrap: 'wrap'
       },
       content: {
-        width: '100%',
+        width: '100%'
       },
       image: {
         width: '100%',
-        maxWidth: '100%',
+        maxWidth: '100%'
       },
       button: {
         marginBottom: 10
@@ -53,9 +53,9 @@ export const Question = ({ ...props }) => {
 
   return (
     <>
-      <div className="box" style={{ backgroundColor: bkg , ...style.box }}>
+      <div className="box" style={{ backgroundColor: bkg, ...style.box }}>
         <div className="content" style={{ ...style.content }}>
-          <p>PERGUNTA {index+1}</p>
+          <p>PERGUNTA {index + 1}</p>
           <p>{question}</p>
           <ul className="alternatives">
             {alternatives.map((alternative, i) => {
@@ -81,7 +81,7 @@ export const Question = ({ ...props }) => {
             style={{ marginBottom: 50, background: '#00773E', color: '#FFF', ...style.button }}
           />
         </div>
-        <div className="image" style={{ position: 'relative' , ...style.image}}>
+        <div className="image" style={{ position: 'relative', ...style.image }}>
           <img src={src} alt="" />
         </div>
       </div>

@@ -41,7 +41,8 @@ export const questions = [
       }
     ],
     image: image1,
-    icon: icon1
+    icon: icon1,
+    message: 'Povos e comunidades tradicionais são muito comunitários, e a maioria de suas atividades são coletivas!'
   },
   {
     index: 1,
@@ -66,7 +67,9 @@ export const questions = [
       }
     ],
     image: image2,
-    icon: icon2
+    icon: icon2,
+    message:
+      'Os atendimentos nas comunidades devem ocorrer de forma comunitária e sempre devem considerar o contexto e os costumes locais.'
   },
   {
     index: 2,
@@ -92,7 +95,8 @@ export const questions = [
       }
     ],
     image: image3,
-    icon: icon3
+    icon: icon3,
+    message: 'A infância é uma das fases mais importantes da vida e deve ser vivida de forma plena, feliz e saudável.'
   },
   {
     index: 3,
@@ -117,7 +121,9 @@ export const questions = [
       }
     ],
     image: image4,
-    icon: icon4
+    icon: icon4,
+    message:
+      'Essa é uma forma de manter os costumes ciganos de serem itinerantes, mas com a garantia de acesso das crianças à educação.'
   },
   {
     index: 4,
@@ -142,7 +148,9 @@ export const questions = [
       }
     ],
     image: image5,
-    icon: icon5
+    icon: icon5,
+    message:
+      'Geralmente, o cacique costuma falar português para se comunicar com os espaços de fora da comunidade, e os demais falam somente a língua materna.'
   },
   {
     index: 5,
@@ -167,7 +175,9 @@ export const questions = [
       }
     ],
     image: image6,
-    icon: icon6
+    icon: icon6,
+    message:
+      'Ainda hoje, os quilombos são símbolo de luta e resistência, e seus costumes e suas tradições são baseados na história dos seus ancestrais.'
   },
   {
     index: 6,
@@ -192,6 +202,8 @@ export const questions = [
       }
     ],
     image: image7,
-    icon: icon7
+    icon: icon7,
+    message:
+      'As famílias de terreiros costumam ser muito grandes. Então, é comum ter vários amigos da comunidade de terreiro durante a infância.'
   }
 ]
