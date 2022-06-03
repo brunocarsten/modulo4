@@ -1,6 +1,7 @@
+import { useNavigate } from 'react-router-dom'
 import { Container } from '../components/layout/Container'
 import { Link } from 'react-router-dom'
-import { NavButton } from '../components/layout/NavButton'
+import { Button } from '../components/layout/Button'
 
 import imgdir from '../assets/popup amarelo dir.png'
 import imgesq from '../assets/popup amarelo esq.png'
@@ -66,6 +67,13 @@ const style = {
 }
 
 export const PopupContagem = () => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    localStorage.clear()
+    navigate('/')
+  }
+
   return (
     <>
       <div className="header" style={style.header}>
@@ -109,14 +117,12 @@ export const PopupContagem = () => {
               <p style={style.text}>
                 Você chegou com sucesso ao fim desta jornada. Continue o curso e aprenda muito mais!
               </p>
-
-              <NavButton
+              <Button
+                onClick={handleClick}
                 label="AVANÇAR"
                 url="/"
                 style={{ width: 264, background: '#00773E', color: '#FFF', maxWidth: '100%' }}
-              >
-                AVANÇAR
-              </NavButton>
+              />
             </div>
             <div className="bkgdir" style={style.bkg}>
               <img src={imgdir} alt="" />

@@ -19,6 +19,11 @@ function ProgressProvider({ children }) {
 
   useEffect(() => {
     const storage = JSON.parse(localStorage.getItem('progress'))
+    if (storage) {
+      if (storage[storage.length - 1] === 6) {
+        localStorage.clear()
+      }
+    }
 
     if (doneItems != '') {
       localStorage.setItem('progress', JSON.stringify(doneItems))

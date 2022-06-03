@@ -1,24 +1,35 @@
 import '../styles/question.scoped.scss'
 
-import { useNavigate } from 'react-router-dom'
-import { useState, useContext } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useState, useContext, useEffect } from 'react'
 import { Button } from './Button'
 import { Checkbox } from './Checkbox'
 import { ProgressContext } from '../../context/progress'
 
 import { questions } from '../../config'
+import { shuffle } from '../../helpers/shuffle'
 
 export const Question = ({ ...props }) => {
+  const location = useLocation()
   const { handleCurrentStep } = useContext(ProgressContext)
   const navigate = useNavigate()
   const { bkg, src, item } = props
   const { alternatives, question, index, message } = item
 
   const [selected, setSelected] = useState(0)
+  const [items, setItems] = useState([])
 
   const onChangeValue = (value) => {
     setSelected(value)
   }
+
+  useEffect(() => {
+    if (location.state) {
+      setItems(shuffle(alternatives))
+    } else {
+      setItems(alternatives)
+    }
+  }, [])
 
   const handleAnswer = async () => {
     const { correct } = selected
@@ -58,7 +69,7 @@ export const Question = ({ ...props }) => {
           <p>PERGUNTA {index + 1}</p>
           <p>{question}</p>
           <ul className="alternatives">
-            {alternatives.map((alternative, i) => {
+            {items.map((alternative, i) => {
               return (
                 <li key={i} className={`alternative ${selected.i === i ? 'active' : ''}`}>
                   <Checkbox

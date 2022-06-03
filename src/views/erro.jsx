@@ -60,17 +60,17 @@ export const PopupErro = (link) => {
             </div>
             <div className="content" style={style.content}>
               <h1 style={style.title}>A resposta não está correta! </h1>
-              <p style={style.text}>Você pode tentar novamente. Que tal aproveitar para revisar a aula e tirar todas as dúvidas?</p>
+              <p style={style.text}>
+                Você pode tentar novamente. Que tal aproveitar para revisar a aula e tirar todas as dúvidas?
+              </p>
               <Button
                 onClick={() => {
-                  navigate(-1)
+                  navigate('/main', { state: { error: true } })
                 }}
                 label="VOLTAR"
                 url={link}
                 style={{ width: 264, marginTop: 20, background: '#00773E', color: '#FFF', maxWidth: '100%' }}
-              >
-                
-              </Button>
+              />
             </div>
             <div className="bkgdir" style={style.bkg}>
               <img src={imgdir} alt="" />
