@@ -1,15 +1,15 @@
 import './styles/transition.scss'
 import Routes from './routes'
 import { ProgressProvider } from './context/progress'
-import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ProgressProvider>
         <Routes />
       </ProgressProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
