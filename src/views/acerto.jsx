@@ -60,7 +60,7 @@ export const PopupAcerto = () => {
   const location = useLocation()
 
   function handleAnswer() {
-    const itemsDone = JSON.parse(localStorage.getItem('progress'))
+    const itemsDone = JSON.parse(localStorage.getItem('modulo4'))
     if (itemsDone) {
       if (itemsDone.length === 7) {
         setLink('/contagem')

@@ -18,7 +18,7 @@ function ProgressProvider({ children }) {
   }
 
   useEffect(() => {
-    const storage = JSON.parse(localStorage.getItem('progress'))
+    const storage = JSON.parse(localStorage.getItem('modulo4'))
     if (storage) {
       if (storage[storage.length - 1] === 6) {
         localStorage.clear()
@@ -26,7 +26,7 @@ function ProgressProvider({ children }) {
     }
 
     if (doneItems != '') {
-      localStorage.setItem('progress', JSON.stringify(doneItems))
+      localStorage.setItem('modulo4', JSON.stringify(doneItems))
     }
   }, [doneItems])
 

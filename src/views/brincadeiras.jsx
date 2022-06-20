@@ -39,7 +39,7 @@ export const Brincadeiras = () => {
   }
 
   useEffect(() => {
-    const itemsDone = JSON.parse(localStorage.getItem('progress'))
+    const itemsDone = JSON.parse(localStorage.getItem('modulo4'))
     if (itemsDone != '') {
       for (const key in itemsDone) {
         questions[itemsDone[key]].done = true
@@ -67,7 +67,7 @@ export const Brincadeiras = () => {
             label={item.title}
             style={style.botao}
           >
-            <img src={item.icon} alt="" style={{maxHeight: 45}} />
+            <img src={item.icon} alt="" style={{ maxHeight: 45 }} />
           </Button>
         )
       } else {
@@ -81,8 +81,7 @@ export const Brincadeiras = () => {
             }}
             label={`BRINCADEIRA ${item.index + 1}`}
             style={style.botao}
-          >
-          </Button>
+          ></Button>
         )
       }
     })
